@@ -19,5 +19,7 @@ def encoder(unencodedString, numbertobeadded):
 
 
 if __name__ == "__main__":
-    x = encoder("12345555", 6)
-    print(x)
+    while True:
+        numbertobeadded = int(input("What do you want the encoding number to be: "))
+        x = encoder("12345555", numbertobeadded)
+        print(x)
