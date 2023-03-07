@@ -1,3 +1,4 @@
+# This is done by G Shashank
 def encoder(unencodedString, numbertobeadded):
     # Variable to hold the final encoded string
     encodedstring = ""
