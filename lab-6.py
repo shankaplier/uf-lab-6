@@ -1,4 +1,6 @@
 # This is done by G Shashank
+import sys
+
 def encoder(unencodedString, numbertobeadded):
     # Variable to hold the final encoded string
     encodedstring = ""
@@ -32,13 +34,23 @@ def decoder(encodedString, decoderNum):
         decoded += str(i)
     return (decoded)
 
-
 if __name__ == "__main__":
     while True:
-        numbertobeadded = int(input("What do you want the encoding number to be: "))
-        x = encoder("12345555", numbertobeadded)
-        print(x)
+        option = input('''Do you want to encode or decode a number?:
+1) encode
+2) decode
+3) exit\n''')
 
-        y = decoder(x, numbertobeadded)
-        print(y)
+        if option == "3":
+            sys.exit()
+        elif option == "1":
+            unencodedString = input("\nWhat do you want the encoding number to be: ")
+            numbertobeadded = int(input("\nBy what value do you want to shift the input: "))
+            encodedString = encoder(unencodedString, numbertobeadded)
+            print(f"\nThe encoded value is: {encodedString}\n")
+        elif option == "2":
+            encodedString = input("What do you want the decoding number to be: ")
+            decoderNum = int(input("\nBy what value do you want to decode the input: "))
+            decoded = decoder(encodedString, decoderNum)
+            print(f"\nThe decoded value is: {decoded}\n")
 
